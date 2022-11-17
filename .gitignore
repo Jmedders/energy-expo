@@ -1,0 +1,21 @@
+node_modules/
+.expo/
+dist/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# macOS
+.DS_Store
+
+# Android & iOS directories since we're managed
+ios/
+android/
+
+# Credentials
+credentials.json
