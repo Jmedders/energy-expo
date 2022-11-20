@@ -1,40 +1,13 @@
-import { useEffect, useState } from "react";
 import { FlatList, StyleSheet, Text } from "react-native";
-import axios from "axios";
-
-import type { OpenChargeMapPoiData, QueryParams } from "./types";
-import { baseUrl, defaultParams } from "./consts";
 import { POICard } from "../../components/POICard";
 import { SafeScreenView } from "../../components/common/SafeScreenView";
 import { Header } from "./components";
-import { ExtendedPOIDetails } from "../../types/POIDetails";
+import type { ExtendedPOIDetails } from "../../types";
+import { usePoiFetch } from "../../hooks/usePoiFetch";
+import { defaultParams } from "./consts";
 
 export const DashboardScreen = () => {
-  /* TODO: If desired, could abstract fetch logic to reusable hook. E.g.
-  const { data, loading, error } = useFetchPois(params) */
-  const [pois, setPois] = useState<OpenChargeMapPoiData>([]);
-  const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    async function fetchPois(params: QueryParams) {
-      try {
-        setIsLoading(true);
-        const { data } = await axios.get<OpenChargeMapPoiData>(baseUrl, {
-          params,
-        });
-        if (data) setPois(data);
-      } catch (errors: any) {
-        if (errors?.message?.includes("403"))
-          setError("You must provide a valid access key");
-        else
-          setError("We were unable to process your request, please try again");
-      } finally {
-        setIsLoading(false);
-      }
-    }
-    fetchPois(defaultParams);
-  }, []);
+  const { data: pois, error, isLoading } = usePoiFetch(defaultParams);
 
   return (
     <SafeScreenView style={styles.wrapper}>
@@ -59,7 +32,7 @@ export const DashboardScreen = () => {
           )}
         </>
       )}
-      {!error && <Text style={styles.errorText}>{error}</Text>}
+      {error && <Text style={styles.errorText}>{error}</Text>}
     </SafeScreenView>
   );
 };

@@ -1,7 +1,3 @@
-import { ExtendedPOIDetails } from "../../types/POIDetails";
-
-export type OpenChargeMapPoiData = ExtendedPOIDetails[];
-
 export type QueryParams = {
   /**Filter results to a given bounding box. specify top left and bottom right box corners as: (lat,lng),(lat2,lng2) */
   boundingBox?: Array<number>;

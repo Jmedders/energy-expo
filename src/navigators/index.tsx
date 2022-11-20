@@ -1,6 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import { DashboardScreen, StationDetailsScreen } from "../screens";
 
+import { DashboardScreen, StationDetailsScreen } from "../screens";
 import type { RootStackParamList } from "./types";
 
 const RootStack = createStackNavigator<RootStackParamList>();

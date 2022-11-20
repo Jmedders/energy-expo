@@ -1,4 +1,4 @@
-import { QueryParams } from "./types";
+import type { QueryParams } from "../../types";
 
 export const defaultParams: QueryParams = {
   countrycode: "US",
@@ -12,5 +12,3 @@ export const defaultParams: QueryParams = {
   latitude: 37.7749,
   longitude: -122.4194,
 };
-
-export const baseUrl = "https://api.openchargemap.io/v3/pois";

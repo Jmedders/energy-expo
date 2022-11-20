@@ -1,7 +1,7 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
-
 import { useNavigation } from "@react-navigation/native";
+
 import type { IPOICard } from "./types";
 import type { NavigationRootStackType } from "../../navigators/types";
 

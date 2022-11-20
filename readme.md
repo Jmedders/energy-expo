@@ -15,7 +15,7 @@ cd energy-expo
 npm install
 
 # Spin up the dev server
-npx expo start
+npx expo start # Alternatively use npm run start
 
 # You should now see the expo startup menu (including a QR code)
 # If you want to run the app on your device, scan the QR code

@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
-import { IHeader } from "./types";
+
+import type { IHeader } from "./types";
 
 export const Header = ({ distance, distanceUnit }: IHeader) => (
   <>
