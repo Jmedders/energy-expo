@@ -30,6 +30,17 @@ npx expo start
 
 If you want to run on emulators/simulators, follow the [React Native CLI instructions](https://reactnative.dev/docs/environment-setup)
 
+## What I'd do going forward:
+
+- The immediate add would be establishing testing, specifically:
+  - I'd bring in a package like [msw](https://mswjs.io/) to mock requests and assert UI responds appropriately
+  - I'd create some reusable testing patterns / providers that can be consumed easily
+- Allow for dynamic location
+  - likely by requesting user's location, though could also allow user to input latitude & longitude
+- I left a variety of `TODO`s in the app. See them for more info: (e.g. usage of env variable, creation of global color constants, theming, additional loading states)
+- Splash screen while app loading
+- if state got more complex, obviously we could consider adding data management strategies like `react-query`, `swr`, or `apollo` (if we were using graphQL) in conjunction with normal `Context Providers`
+
 ---
 
 ## Contributing:
@@ -40,10 +51,10 @@ Unlike most JavaScript/Typescript projects, you will not use `npm` or `yarn` to 
 
 ```sh
 # Regular dependency
-expo install [package-name]
+npx expo install [package-name]
 
 # Dev dependency
-expo install [package-name] -- --save-dev
+npx expo install [package-name] -- --save-dev
 ```
 
 # Instructions
@@ -53,8 +64,8 @@ Provided instructions can be found [here](./instructions.md)
 ## Functionality Checklist
 
 - ✅ allows user to view surrounding public charging stations
-  - no filters, or car compatibility concerns, all compatible with ev
+  - no filters, or car compatibility concerns, all compatible with ev (✅)
 - ✅ allows user to select one of the charging stations
 - ✅ once charger is selected, allow user to "start charging"
 - ✅ tells backend it wants to charge at that station
-  - simple POST, no authentication required
+  - simple POST, no authentication required (✅)
