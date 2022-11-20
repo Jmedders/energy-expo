@@ -27,7 +27,7 @@ export const usePoiFetch = (params: QueryParams) => {
       }
     }
     fetchPois(params);
-  }, []);
+  }, [params]);
 
   return { data, error, isLoading };
 };
