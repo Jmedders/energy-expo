@@ -35,6 +35,7 @@ If you want to run on emulators/simulators, follow the [React Native CLI instruc
 - The immediate add would be establishing testing, specifically:
   - I'd bring in a package like [msw](https://mswjs.io/) to mock requests and assert UI responds appropriately
   - I'd create some reusable testing patterns / providers that can be consumed easily
+- Establish Husky, Linting, Prettier rules
 - Allow for dynamic location
   - likely by requesting user's location, though could also allow user to input latitude & longitude
 - I left a variety of `TODO`s in the app. See them for more info: (e.g. usage of env variable, creation of global color constants, theming, additional loading states)
